@@ -11,9 +11,16 @@ Ce TP a pour objectif de mettre en pratique l'utilisation des Hooks React (useSt
 
 _Votre réponse pour l'exercice 1 :_
 ```
+
 Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+Saisie utilisateur : L'utilisateur tape un terme de recherche dans un champ de texte.
+
+Debounce : Lorsque l'utilisateur tape, un délai de 1 seconde est introduit avant d'envoyer la recherche. Cela permet de ne pas envoyer une requête à chaque frappe, mais d'attendre que l'utilisateur ait fini de saisir (grâce au debounce).
+
+Requête côté client : Dès que l'utilisateur a arrêté de taper pendant 1 seconde, une requête API est envoyée pour chercher les produits correspondants à ce terme. Une fois que les produits sont récupérés, ils sont affichés.
+
 ```
+![Exercice 1](src/assets/images/ex1.png)
 
 ### Exercice 2 : Context et Internationalisation
 #### Objectif : Gérer les préférences de langue
@@ -23,14 +30,6 @@ Expliquez votre solution ici
 - [ ] 2.3 Documenter votre solution ici
 
 _Votre réponse pour l'exercice 2 :_
-```
-Expliquez votre solution ici
-Saisie utilisateur : L'utilisateur tape un terme de recherche dans un champ de texte.
-
-Debounce : Lorsque l'utilisateur tape, un délai de 1 seconde est introduit avant d'envoyer la recherche. Cela permet de ne pas envoyer une requête à chaque frappe, mais d'attendre que l'utilisateur ait fini de saisir (grâce au debounce).
-
-Requête côté client : Dès que l'utilisateur a arrêté de taper pendant 1 seconde, une requête API est envoyée pour chercher les produits correspondants à ce terme. Une fois que les produits sont récupérés, ils sont affichés.
-![Exercice 1](./public/assets/images/ex1.png)
 
 ```
 
