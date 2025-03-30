@@ -32,6 +32,19 @@ Requête côté client : Dès que l'utilisateur a arrêté de taper pendant 1 se
 _Votre réponse pour l'exercice 2 :_
 
 ```
+LanguageContext : Nous avons créé un contexte pour gérer l'état de la langue et les traductions dans l'application.
+
+LanguageProvider : Ce composant fournit l'état de la langue et les traductions à toute l'application via le LanguageContext.
+
+useLanguage : Ce hook permet aux composants enfants d'accéder au contexte pour récupérer la langue et les traductions.
+
+translations : Un objet contenant les traductions pour différentes langues est utilisé dans toute l'application pour afficher des textes dans la langue choisie.
+
+Cette approche permet de centraliser la gestion des langues et des traductions dans l'application, tout en permettant une évolution facile (ajouter de nouvelles langues, de nouveaux textes traduits). Grâce à React Context et aux hooks, la gestion de la langue devient simple et efficace pour l'utilisateur final.
+
+```
+![Exercice 2](src/assets/images/ex2.png)
+
 
 ### Exercice 3 : Hooks Personnalisés
 #### Objectif : Créer des hooks réutilisables
