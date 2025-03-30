@@ -2,48 +2,6 @@
 
 Ce TP a pour objectif de mettre en pratique l'utilisation des Hooks React (useState, useEffect, useContext) ainsi que la création de Hooks personnalisés.
 
-## Installation et configuration initiale
-
-1. Cloner le dépôt :
-```bash
-git clone https://github.com/pr-daaif/tp-react-hooks.git
-cd tp-react-hooks
-```
-
-2. Créer votre propre dépôt sur Github et changer le remote :
-```bash
-# Supprimer le remote origine
-git remote remove origin
-
-# Ajouter votre nouveau remote
-git remote add origin https://github.com/[votre-username]/tp-react-hooks.git
-
-# Premier push
-git push -u origin main
-```
-
-3. Installer les dépendances :
-```bash
-npm install
-```
-
-4. Lancer l'application :
-```bash
-npm start
-```
-
-## Instructions pour le TP
-
-Pour chaque exercice :
-1. Lisez attentivement l'énoncé
-2. Implémentez la solution
-3. Testez votre implémentation (pensez à faire des copies d'écran)
-4. Mettez à jour la section correspondante dans ce README avec :
-   - Une brève explication de votre solution
-   - Des captures d'écran montrant le fonctionnement
-   - Les difficultés rencontrées et comment vous les avez résolues
-5. Commitez vos changements avec un message descriptif
-
 ### Exercice 1 : État et Effets 
 #### Objectif : Implémenter une recherche en temps réel
 
@@ -67,7 +25,12 @@ Expliquez votre solution ici
 _Votre réponse pour l'exercice 2 :_
 ```
 Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+Saisie utilisateur : L'utilisateur tape un terme de recherche dans un champ de texte.
+
+Debounce : Lorsque l'utilisateur tape, un délai de 1 seconde est introduit avant d'envoyer la recherche. Cela permet de ne pas envoyer une requête à chaque frappe, mais d'attendre que l'utilisateur ait fini de saisir (grâce au debounce).
+
+Requête côté client : Dès que l'utilisateur a arrêté de taper pendant 1 seconde, une requête API est envoyée pour chercher les produits correspondants à ce terme. Une fois que les produits sont récupérés, ils sont affichés.
+
 ```
 
 ### Exercice 3 : Hooks Personnalisés
