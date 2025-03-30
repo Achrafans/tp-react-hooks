@@ -30,6 +30,7 @@ Saisie utilisateur : L'utilisateur tape un terme de recherche dans un champ de t
 Debounce : Lorsque l'utilisateur tape, un délai de 1 seconde est introduit avant d'envoyer la recherche. Cela permet de ne pas envoyer une requête à chaque frappe, mais d'attendre que l'utilisateur ait fini de saisir (grâce au debounce).
 
 Requête côté client : Dès que l'utilisateur a arrêté de taper pendant 1 seconde, une requête API est envoyée pour chercher les produits correspondants à ce terme. Une fois que les produits sont récupérés, ils sont affichés.
+![Exercice 1](./public/assets/images/ex1.png)
 
 ```
 
