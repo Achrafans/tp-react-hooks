@@ -55,8 +55,9 @@ Cette approche permet de centraliser la gestion des langues et des traductions d
 
 _Votre réponse pour l'exercice 3 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+Le hook useDebounce permet de retarder l'exécution d'une action lorsqu'une valeur change, ce qui est utile pour optimiser les performances (ex: éviter les appels API à chaque frappe dans un champ de recherche).
+
+Le hook useLocalStorage permet de stocker et récupérer des données dans localStorage, tout en mettant à jour automatiquement l'état React.
 ```
 
 ### Exercice 4 : Gestion Asynchrone et Pagination
