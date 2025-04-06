@@ -3,8 +3,7 @@ import { ThemeContext } from '../App';
 import useDebounce from '../hooks/useDebounce';
 import { useLanguage } from '../hooks/useLanguage';
 
-const ProductSearch = ({onSearch}) => {
-  const [searchTerm, setSearchTerm] = useState('');
+const ProductSearch = ({searchTerm, onSearch}) => {
   const { isDarkTheme } = useContext(ThemeContext);
   const { language, translations } = useLanguage();
 
@@ -21,7 +20,7 @@ const ProductSearch = ({onSearch}) => {
       <input
         type="text"
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={(e) => onSearch(e.target.value)}
         placeholder={translations[language]?.searchPlaceholder || "Rechercher un produit..."}
         className={`form-control ${isDarkTheme ? 'bg-dark text-light' : ''}`}
       />

@@ -11,6 +11,10 @@ const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
+  const handleReload = () => {
+    setSearchTerm('')
+  }
+
 
   return (
     <LanguageProvider>
@@ -21,10 +25,13 @@ const App = () => {
             <div className="d-flex align-items-end flex-column gap-2">
               <ThemeToggle />
               <LanguageSelector /> 
+              <button onClick={handleReload} className="btn btn-primary">
+                🔄
+              </button>
             </div>
           </header>
           <main>
-            <ProductSearch onSearch={setSearchTerm} />
+            <ProductSearch onSearch={setSearchTerm} searchTerm = {searchTerm} />
             <ProductList searchTerm={searchTerm} />
           </main>
         </div>

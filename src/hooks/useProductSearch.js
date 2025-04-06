@@ -34,7 +34,7 @@ const useProductSearch = (searchTerm) => {
 
     // Filtrage des produits en fonction du terme de recherche
     useEffect(() => {
-      if (debouncedSearchTerm === '') {
+      if (debouncedSearchTerm === '' || debouncedSearchTerm == null) {
         setFilteredProducts(products); // Affiche tous les produits si la recherche est vide
       } else {
         const lowercasedSearchTerm = debouncedSearchTerm.toLowerCase();
