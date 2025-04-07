@@ -69,6 +69,9 @@ Le hook useLocalStorage permet de stocker et récupérer des données dans local
 
 _Votre réponse pour l'exercice 4 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+On utilise un hook useEffect pour appeler l’API https://api.daaif.net/products.
+
+On ajoute les paramètres skip (combien d’éléments ignorer) et limit (combien en récupérer).
+
 ```
+![Exercice 4](src/assets/images/ex4.png)
