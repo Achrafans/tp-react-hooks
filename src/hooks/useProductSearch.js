@@ -10,14 +10,17 @@ const useProductSearch = (searchTerm) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
-  // TODO: Exercice 4.2 - Ajouter l'état pour la pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+
 
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        // TODO: Exercice 4.2 - Modifier l'URL pour inclure les paramètres de pagination
-        const response = await fetch('https://api.daaif.net/products?delay=1000');
+        const skip = (currentPage - 1) * itemsPerPage;
+        const response = await fetch(`https://api.daaif.net/products?delay=1000&skip=${skip}&limit=${itemsPerPage}`);
+        //const response = await fetch('https://api.daaif.net/products?delay=1000');
         if (!response.ok) throw new Error('Erreur réseau');
         const data = await response.json();
         setProducts(data.products);
@@ -30,7 +33,7 @@ const useProductSearch = (searchTerm) => {
     };
 
     fetchProducts();
-  }, []); // TODO: Exercice 4.2 - Ajouter les dépendances pour la pagination
+  }, [currentPage]);
 
     // Filtrage des produits en fonction du terme de recherche
     useEffect(() => {
@@ -48,15 +51,19 @@ const useProductSearch = (searchTerm) => {
 
 
 
-  // TODO: Exercice 4.1 - Ajouter la fonction de rechargement
-  // TODO: Exercice 4.2 - Ajouter les fonctions pour la pagination
+  const nextPage = () => setCurrentPage(prev => prev + 1);
+  const previousPage = () => setCurrentPage(prev => Math.max(prev - 1, 1));
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+  
 
   return { 
     products: filteredProducts, 
     loading, 
     error,
-    // TODO: Exercice 4.1 - Retourner la fonction de rechargement
-    // TODO: Exercice 4.2 - Retourner les fonctions et états de pagination
+    currentPage,
+    nextPage,
+    previousPage,
+    totalPages
   };
 };
 
